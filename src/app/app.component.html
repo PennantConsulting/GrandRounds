@@ -5,14 +5,14 @@
   <form class="form-inline" id="filter">
     <input class="span7" type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, Speaker etc." />
 
-    <select>
-      <option selected="selected">Category</option>
-      <option *ngFor="let category of filterMeta?.categories">{{category}}</option>
+    <select [(ngModel)]="searchCat" name="searchCat">
+      <option [selected]="searchCat === ''" value="" selected>Category (all)</option>
+      <option *ngFor="let category of filterMeta.categories" [ngValue]="category">{{category}}</option>
     </select>
 
     <select [(ngModel)]="searchYear" name="searchYear">
-      <option selected="selected">Year</option>
-      <option *ngFor="let year of filterMeta?.years" [ngValue]="year">{{year}}</option>
+      <option [selected]="searchYear === ''" value="" selected>Year (all)</option>
+      <option *ngFor="let year of filterMeta.years" [ngValue]="year">{{year}}</option>
     </select>
   
   </form>
@@ -20,7 +20,7 @@
 
 <div class="mediaResults">
 
-  <div class="span10 mediaModule" *ngFor="let item of items | filter : searchText:searchYear">
+  <div class="span10 mediaModule" *ngFor="let item of items | filter : searchText:searchYear:searchCat">
     <section class="module-typeA">
       <h3>{{item.title}}</h3>
       <figure class="pull-left">
@@ -34,5 +34,4 @@
     </section>
   </div>
 
-  
 </div>

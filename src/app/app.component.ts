@@ -3,17 +3,23 @@ import { MediadataService } from './mediadata.service';
 
 @Component({
   selector: 'app-root',
-  //templateUrl: './app.component.html',
-  templateUrl: './app.componentALT.html',
+  templateUrl: './app.component.html',
+  //templateUrl: './app.componentALT.html',
   styleUrls: ['../styles.css']
 })
 export class AppComponent {
   items:Item[];
-  filterMeta:Item[];
+  filterMeta;
   ImgHost:string;
+  searchText:string;
+  searchYear:string;
+  searchCat:string;
 
   constructor(private dataService:MediadataService) {
     this.ImgHost='//www.cdc.gov';
+    this.searchText = '';
+    this.searchYear = '';
+    this.searchCat = '';
   }
   
   ngOnInit() {
