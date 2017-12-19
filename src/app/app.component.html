@@ -2,7 +2,7 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis, velit non bibendum euismod, lectus lacus semper quam, non porta mi tortor a est. Aliquam erat volutpat. Nunc eu vehicula ligula. In ac risus non turpis dictum eleifend a nec sapien. Maecenas ut libero ultrices, scelerisque nibh sit amet, fringilla lacus. </p>
 
 <div class="well">
-  <form class="form-inline" id="filter">
+  <form class="form-inline" id="mediaFilter">
     <input class="span7" type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, Speaker etc." />
 
     <select [(ngModel)]="searchCat" name="searchCat">
@@ -14,7 +14,6 @@
       <option [selected]="searchYear === ''" value="" selected>Year (all)</option>
       <option *ngFor="let year of filterMeta.years" [ngValue]="year">{{year}}</option>
     </select>
-  
   </form>
 </div>
 
@@ -34,4 +33,4 @@
     </section>
   </div>
 
-</div>
+</div><!-- mediaResults -->
