@@ -15,19 +15,19 @@ export class FilterPipe implements PipeTransform {
 		searchCat;
 
 		return items.filter(function(item) {
-			if (searchYear && item.year.indexOf(searchYear) === -1) {
+			if (searchYear && item.cdc_browsing_lifespan.indexOf(searchYear) === -1) {
 				return false;
 			}
 
 			if (searchCat) {
-				for (var i = 0; i < item.categories.length; i++) { 
-					if (item.categories[i] !== searchCat) {
+				for (var i = 0; i < item.cdc_browsing_categories.length; i++) { 
+					if (item.cdc_browsing_categories[i] !== searchCat) {
 						return false;
 					}
 				}
 			}
 
-			return item.title.toLowerCase().includes(searchText.toLowerCase());
+			return item.post_title.toLowerCase().includes(searchText.toLowerCase());
 		});
    }
 }

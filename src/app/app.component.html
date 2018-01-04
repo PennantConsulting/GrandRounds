@@ -7,12 +7,12 @@
 
     <select [(ngModel)]="searchCat" name="searchCat">
       <option [selected]="searchCat === ''" value="" selected>Category (all)</option>
-      <option *ngFor="let category of filterMeta.categories" [ngValue]="category">{{category}}</option>
+      <option *ngFor="let category of filterMeta?.cdc_browsing_categories" [ngValue]="category">{{category}}</option>
     </select>
 
     <select [(ngModel)]="searchYear" name="searchYear">
       <option [selected]="searchYear === ''" value="" selected>Year (all)</option>
-      <option *ngFor="let year of filterMeta.years" [ngValue]="year">{{year}}</option>
+      <option *ngFor="let year of filterMeta?.cdc_browsing_lifespan" [ngValue]="year">{{year}}</option>
     </select>
   </form>
 </div>
@@ -21,15 +21,15 @@
 
   <div class="span10 mediaModule" *ngFor="let item of items | filter : searchText:searchYear:searchCat">
     <section class="module-typeA">
-      <h3>{{item.title}}</h3>
+      <h3>{{item.post_title}}</h3>
       <figure class="pull-left">
-        <img class="stroke center" alt="{{item.title}}" [src]="ImgHost + item.image_url" style="display: block;">
+        <img class="stroke center" alt="{{item.post_title}}" [src]="item.cdc_related_image" style="display: block;">
       </figure>
       <div>
-        <span class="mediaDate">{{item.month}}, {{item.year}}</span>
-        <p>{{item.description}}</p>
+        <!-- <span class="mediaDate">{{item.month}}, {{item.year}}</span> -->
+        <p>{{item.cdc_internal_description}}</p>
       </div>
-      <p class="somemore"><a href="{{ImgHost + item.url}}" class="tp-link-policy">Watch Now</a><span class="icon-angle-right"></span></p>
+      <p class="somemore"><a href="{{item.public_url}}" class="tp-link-policy">Watch Now</a><span class="icon-angle-right"></span></p>
     </section>
   </div>
 

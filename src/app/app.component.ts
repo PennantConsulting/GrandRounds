@@ -32,11 +32,11 @@ export class AppComponent {
 }
 
 interface Item {
-  title:string,
+  post_title:string,
   month:string,
   year:string,
-  image_url:string,
-  url:string,
-  categories:object,
-  description:string
+  cdc_related_image:string,
+  public_url:string,
+  cdc_browsing_categories:object,
+  cdc_internal_description:string
 }
