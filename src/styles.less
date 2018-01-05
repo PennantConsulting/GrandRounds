@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-form#mediaFilter {
-	margin-bottom:0;
+#mediaFilter {
+	padding-top: 8px;
+	form {margin-bottom:0;}
+	input, select {width:100%;}
+	label {
+		font-size: 9pt;
+		color: #666;
+		margin-bottom: 0;
+	}
 }
 
 .mediaResults {
@@ -19,6 +26,8 @@ form#mediaFilter {
 			line-height: 20px;
 		}
 
-		.mediaDate {font-size:9pt; color:#666;}
+		.mediaDate {font-size:9pt;}
+
+		&:nth-child(odd) {clear:left;}
 	}
 }
