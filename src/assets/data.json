@@ -5,7 +5,7 @@
 	},
 	"items": [
 		{
-			"post_title": "Global Prevention of Neural Tube Defects",
+			"cdc_short_title": "Global Prevention of Neural Tube Defects",
 			"cdc_browsing_lifespan": ["Adult","Senior"],
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/GR-10-17-pregnant-woman-eating-cereal-400px.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/october2017.html",
@@ -14,7 +14,7 @@
 			"cdc_internal_description": "Neural tube defects are serious birth defects of the brain and spine. They are a major cause of death and lifelong disability worldwide. Up to 85 percent of neural tube defects can be prevented if women consume enough folic acid before and during early pregnancy. But worldwide only 15 percent of neural tube defects are prevented."
 		},
 		{
-			"post_title": "Healthy Aging: Promoting Well-being in Older Adults",
+			"cdc_short_title": "Healthy Aging: Promoting Well-being in Older Adults",
 			"cdc_browsing_lifespan": "All",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-sep-walking-couple-400px.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/september2017.html",
@@ -23,7 +23,7 @@
 			"cdc_internal_description": "The population of older Americans is growing and living longer than ever. As a group, they are living active lives and contributing to the economy. The added years to the lifespans have resulted in a longer middle age—extending the period when workers are at their most productive and creative."
 		},
 		{
-			"post_title": "New Frontiers in Workplace Health",
+			"cdc_short_title": "New Frontiers in Workplace Health",
 			"cdc_browsing_lifespan": "Infant",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/walking-downstairs-400px.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/august2017.html",
@@ -32,7 +32,7 @@
 			"cdc_internal_description": "Each year, more than 4,500 deaths occur from work-related injuries and 10%–20% of all cardiovascular diseases among working-age people are work-related.  Work-related stress is the leading workplace health problem and a major occupational health risk, ranking above physical inactivity and obesity."
 		},
 		{
-			"post_title": "It's Loud Out There: Hearing Health across the Lifespan",
+			"cdc_short_title": "It's Loud Out There: Hearing Health across the Lifespan",
 			"cdc_browsing_lifespan": "Child",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-jun2017.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/june2017.html",
@@ -41,7 +41,7 @@
 			"cdc_internal_description": "The world is on the verge of a hearing loss epidemic. Some 360 million people live with disabling hearing loss worldwide and that number is growing. Young and older people are at risk. One in three older adults has hearing loss, and 1.1 billion young people are at risk for hearing loss around the world."
 		},
 		{
-			"post_title": "ALS Registry – Impact, Challenges, and Future Directions",
+			"cdc_short_title": "ALS Registry – Impact, Challenges, and Future Directions",
 			"cdc_browsing_lifespan": "None",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-april-lou-gehrig.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/april2017.html",
@@ -50,7 +50,7 @@
 			"cdc_internal_description": "Amyotrophic Lateral Sclerosis (ALS), sometimes called Lou Gehrig’s disease, is a rapidly progressive, fatal neurological disease caused by degeneration of motor neurons in the brain and spinal cord. Researchers don’t know what causes ALS and there is no cure. Approximately 80 percent of persons with ALS die within 2-5 years of diagnosis."
 		},
 		{
-			"post_title": "Emerging Tickborne Diseases",
+			"cdc_short_title": "Emerging Tickborne Diseases",
 			"cdc_browsing_lifespan": "Senior",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-mar-dog-tick.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/March2017.htm",
@@ -59,7 +59,7 @@
 			"cdc_internal_description": "Infections from tickborne diseases in the US are steadily increasing — and new tickborne diseases have been discovered in recent years. Ticks are vectors that can carry infectious agents such as bacteria, viruses, or parasites. When an infected tick bites a person or an animal, the tick’s saliva transmits infectious agents that can cause illness."
 		},
 		{
-			"post_title": "Overcoming Barriers to Medication Adherence for Chronic Diseases",
+			"cdc_short_title": "Overcoming Barriers to Medication Adherence for Chronic Diseases",
 			"cdc_browsing_lifespan": "Young Adult",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-feb-woman-holding-bottle-pills.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/February2017.htm",
@@ -68,7 +68,7 @@
 			"cdc_internal_description": "Medications save lives for countless Americans. People with chronic illnesses such as high blood pressure, coronary artery disease, and HIV can enjoy a good quality of life when they routinely take their medicine. Poor medication adherence is linked with poor clinical outcomes."
 		},
 		{
-			"post_title": "Unique Challenges of Opioid Use Disorder in Women",
+			"cdc_short_title": "Unique Challenges of Opioid Use Disorder in Women",
 			"cdc_browsing_lifespan": "Adolescents",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2017/gr-jan-bottle-pills.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2017/January2017.htm",
@@ -77,7 +77,7 @@
 			"cdc_internal_description": "Deaths from drug overdoses are the number one cause of injury death in the U.S. Most of these deaths are related to the misuse of prescription opioids and heroin. While men were more likely than women to die of opioid overdose, the number of overdose deaths from opioids among women has increased substantially."
 		},
 		{
-			"post_title": "Public Health Law: A Tool to Address Emerging Health Concerns",
+			"cdc_short_title": "Public Health Law: A Tool to Address Emerging Health Concerns",
 			"cdc_browsing_lifespan": "Adult",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2016/gr-dec-court-building.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2016/December2016.htm",
@@ -86,7 +86,7 @@
 			"cdc_internal_description": "Law is a critical tool for protecting and promoting the health of the public. Some of history’s greatest public health successes, such as childhood immunization and safer workplaces, would not have been possible without changes to laws and policies."
 		},
 		{
-			"post_title": "Improving the Lives of People with Sickle Cell Disease",
+			"cdc_short_title": "Improving the Lives of People with Sickle Cell Disease",
 			"cdc_browsing_lifespan": "All",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2016/little-girl-with-doctor-300px.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2016/November2016.htm",
@@ -95,7 +95,7 @@
 			"cdc_internal_description": "Over the past 30 years, treatments for SCD and its complications have improved average life expectancy, but these treatments can be costly and invasive. Additionally, healthcare needs and access to care may change over the course of a patient’s life."
 		},
 		{
-			"post_title": "Changes in Clinical Diagnostics and Tracking Infectious Diseases",
+			"cdc_short_title": "Changes in Clinical Diagnostics and Tracking Infectious Diseases",
 			"cdc_browsing_lifespan": "Infant",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/2016/gr-october-person-in-lab.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2016/October2016.htm",
@@ -104,7 +104,7 @@
 			"cdc_internal_description": "When it comes to tracking infectious diseases and outbreaks, determining who is infected with a particular pathogen is the first step in solving the puzzle and stopping the spread of the disease. Traditionally, culture testing has been the primary means of identifying the specific pathogen."
 		},
 		{
-			"post_title": "Beyond the Blood Spot: Newborn Screening for Hearing Loss and Critical Congenital Heart Disease",
+			"cdc_short_title": "Beyond the Blood Spot: Newborn Screening for Hearing Loss and Critical Congenital Heart Disease",
 			"cdc_browsing_lifespan": "Child",
 			"cdc_related_image": "https://www.cdc.gov/cdcgrandrounds/images/Baby-with-Doctor-300x199.jpg",
 			"public_url": "https://www.cdc.gov/cdcgrandrounds/archives/2016/September2016.htm",
