@@ -32,7 +32,7 @@ export class AppComponent {
 }
 
 interface Item {
-  post_title:string,
+  cdc_short_title:string,
   month:string,
   year:string,
   cdc_related_image:string,

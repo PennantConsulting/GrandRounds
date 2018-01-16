@@ -27,7 +27,7 @@ export class FilterPipe implements PipeTransform {
 				}
 			}
 
-			return item.post_title.toLowerCase().includes(searchText.toLowerCase());
+			return item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase());
 		});
    }
 }

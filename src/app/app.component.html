@@ -33,9 +33,9 @@
   <div class="span11 mediaModule" 
     *ngFor="let item of items | filter : searchText:searchYear:searchCat; let i = index; let odd = odd">
     <section class="module-typeA">
-      <h3>{{item.post_title}}</h3>
+      <h3>{{item.cdc_short_title}}</h3>
       <figure class="pull-left">
-        <img class="stroke center" alt="{{item.post_title}}" [src]="item.cdc_related_image" style="display: block;">
+        <img class="stroke center" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
       </figure>
       <div>
         <span class="mediaDate gray3-color">{{item.cdc_event_start_date | date: 'MMMM, y'}}</span>
