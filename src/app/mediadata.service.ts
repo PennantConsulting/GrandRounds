@@ -10,7 +10,9 @@ export class MediadataService {
   }
 
   getPosts() {
-    return this.http.get('../assets/data.json')
+    var datapath = document.getElementsByTagName("app-root")[0].getAttribute("data-datasource"); 
+
+    return this.http.get(datapath)
     .map(res => res.json());
   }
 

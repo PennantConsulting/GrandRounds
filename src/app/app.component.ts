@@ -4,7 +4,6 @@ import { MediadataService } from './mediadata.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  //templateUrl: './app.componentALT.html',
   styleUrls: ['../styles.css']
 })
 export class AppComponent {
