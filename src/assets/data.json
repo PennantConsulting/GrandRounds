@@ -1,7 +1,7 @@
 {
 	"filters": {
-		"cdc_browsing_categories": ["Aging","Cancer","Cardiovascular","Child Health","Chronic Disease","Drug Use","Emergencies","Environmental","Hospital Healthcare","Infectious Disease","Injury","General Science","Maternal Health","Mental Health","Other","Prevention","HIV/STD/TB","Tobacco", "Vaccines"],
-		"cdc_browsing_lifespan": ["Adult","All","Infant","Child","None","Senior","Young Adult","Adolescents"]
+		"cdc_session_browsing_categories": ["Aging","Cancer","Cardiovascular","Child Health","Chronic Disease","Drug Use","Emergencies","Environmental","Hospital Healthcare","Infectious Disease","Injury","General Science","Maternal Health","Mental Health","Other","Prevention","HIV/STD/TB","Tobacco", "Vaccines"],
+		"cdc_session_browsing_lifespan": ["Adult","All","Infant","Child","None","Senior","Young Adult","Adolescents"]
 	},
 	"items": [
 		{

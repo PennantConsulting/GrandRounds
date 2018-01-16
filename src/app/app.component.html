@@ -13,7 +13,7 @@
         <label for="searchCat">Filter by</label>
         <select [(ngModel)]="searchCat" name="searchCat" id="searchCat">
           <option [selected]="searchCat === ''" value="" selected>Category (all)</option>
-          <option *ngFor="let category of filterMeta?.cdc_browsing_categories" [ngValue]="category">{{category}}</option>
+          <option *ngFor="let category of filterMeta?.cdc_session_browsing_categories" [ngValue]="category">{{category}}</option>
         </select>
       </div>
       
@@ -21,7 +21,7 @@
         <label>Filter by</label>
         <select [(ngModel)]="searchYear" name="searchYear">
           <option [selected]="searchYear === ''" value="" selected>Lifespan (all)</option>
-          <option *ngFor="let year of filterMeta?.cdc_browsing_lifespan" [ngValue]="year">{{year}}</option>
+          <option *ngFor="let year of filterMeta?.cdc_session_browsing_lifespan" [ngValue]="year">{{year}}</option>
         </select>
       </div>
     </div>

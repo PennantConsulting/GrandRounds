@@ -36,7 +36,8 @@ interface Item {
   year:string,
   cdc_related_image:string,
   public_url:string,
-  cdc_browsing_categories:object,
+  cdc_session_browsing_categories:object,
+  cdc_session_browsing_lifespan:object,
   cdc_internal_description:string,
   cdc_event_start_date:string
 }
