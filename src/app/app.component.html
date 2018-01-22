@@ -24,6 +24,17 @@
           <option *ngFor="let year of filterMeta?.cdc_session_browsing_lifespan" [ngValue]="year">{{year}}</option>
         </select>
       </div>
+
+      <div class="span4 pull-right">
+        <label>Sort by</label>
+        <select [(ngModel)]="searchSort" name="searchSort">
+          <option [selected]="searchSort === ''" value="" selected>Sort (all)</option>
+          <option [ngValue]="sortItems?.cdc_short_title.asc">{{sortItems?.cdc_short_title.asc}}</option>
+          <option [ngValue]="sortItems?.cdc_short_title.desc">{{sortItems?.cdc_short_title.desc}}</option>
+          <option [ngValue]="sortItems?.cdc_event_start_date.asc">{{sortItems?.cdc_event_start_date.asc}}</option>
+          <option [ngValue]="sortItems?.cdc_event_start_date.desc">{{sortItems?.cdc_event_start_date.desc}}</option>
+        </select>
+      </div>
     </div>
   </form>
 </div>
@@ -31,16 +42,20 @@
 <div class="mediaResults">
 
   <div class="span11 mediaModule" 
-    *ngFor="let item of items | filter : searchText:searchYear:searchCat; let i = index; let odd = odd">
+    *ngFor="let item of items | filter : searchText:searchYear:searchCat:searchSort; let i = index; let odd = odd">
     <section class="module-typeA">
       <h3>{{item.cdc_short_title}}</h3>
+      <div class="mediaDate gray3-color">
+        {{item.cdc_event_start_date | date: 'MMMM, y'}}<span *ngIf="item.cdc_session_browsing_categories.length">, </span>
+        <span *ngFor="let cats of item.cdc_session_browsing_categories; let last = last">
+          {{cats}}<span *ngIf="!last">, </span>
+        </span>
+      </div>
       <figure class="pull-left">
         <img class="stroke center" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
       </figure>
-      <div>
-        <span class="mediaDate gray3-color">{{item.cdc_event_start_date | date: 'MMMM, y'}}</span>
-        <p>{{item.cdc_internal_description}}</p>
-      </div>
+      
+      <div [innerHTML]="item.cdc_internal_description"></div>
 
       <p class="morelink">
         <a href="{{item.public_url}}" class="tp-link-policy">

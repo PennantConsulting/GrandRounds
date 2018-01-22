@@ -9,22 +9,26 @@ import { MediadataService } from './mediadata.service';
 export class AppComponent {
   items:Item[];
   filterMeta;
+  sortItems;
   ImgHost:string;
   searchText:string;
   searchYear:string;
   searchCat:string;
+  searchSort:string;
 
   constructor(private dataService:MediadataService) {
     this.ImgHost='//www.cdc.gov';
     this.searchText = '';
     this.searchYear = '';
     this.searchCat = '';
+    this.searchSort = '';
   }
   
   ngOnInit() {
     this.dataService.getPosts().subscribe((items) => {
       this.items = items.items;
       this.filterMeta = items.filters;
+      this.sortItems = items.sort;
     });
   }
 
