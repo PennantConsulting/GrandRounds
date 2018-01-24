@@ -32,6 +32,12 @@ export class AppComponent {
     });
   }
 
+  onProfileChange() {
+    if(this.searchSort === '') {
+      this.searchSort = '0';
+    }
+  }
+
 }
 
 interface Item {

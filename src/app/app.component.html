@@ -2,7 +2,7 @@
 <p>Public Health Grand Rounds is a monthly webcast created to foster discussion on major public health issues. Each session focuses on key challenges related to a specific health topic, and explores cutting-edge scientific evidence and potential impact of different interventions. The Grand Rounds sessions also highlight how CDC and its partners are already addressing these challenges and discuss the recommendations for future research and practice.</p>
 
 <div class="well" id="mediaFilter">
-  <form class="form-inline">
+  <form class="form-inline" name="filterForm">
     <div class="row">
       <div class="span7" style="margin-right:15px;">
           <label for="inputSearch">Search</label>
@@ -27,8 +27,8 @@
 
       <div class="span4 pull-right">
         <label>Sort by</label>
-        <select [(ngModel)]="searchSort" name="searchSort">
-          <option [selected]="searchSort === ''" value="" selected>Sort (all)</option>
+        <select [(ngModel)]="searchSort" name="searchSort" (change)="onProfileChange()">
+          <option [selected] value="">Sort (all)</option>
           <option [ngValue]="sortItems?.cdc_short_title.asc">{{sortItems?.cdc_short_title.asc}}</option>
           <option [ngValue]="sortItems?.cdc_short_title.desc">{{sortItems?.cdc_short_title.desc}}</option>
           <option [ngValue]="sortItems?.cdc_event_start_date.asc">{{sortItems?.cdc_event_start_date.asc}}</option>
@@ -46,8 +46,8 @@
     <section class="module-typeA">
       <h3>{{item.cdc_short_title}}</h3>
       <div class="mediaDate gray3-color">
-        {{item.cdc_event_start_date | date: 'MMMM, y'}}<span *ngIf="item.cdc_session_browsing_categories.length">, </span>
-        <span *ngFor="let cats of item.cdc_session_browsing_categories; let last = last">
+        {{item.cdc_event_start_date | date: 'MMMM y'}}<span *ngIf="item.cdc_session_browsing_categories.length">, </span>
+        <span *ngFor="let cats of item.cdc_session_browsing_categories | slice:0:3; let last = last">
           {{cats}}<span *ngIf="!last">, </span>
         </span>
       </div>
