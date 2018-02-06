@@ -17,7 +17,7 @@ export class FilterPipe implements PipeTransform {
 		searchSort || '0';
 
 		if (searchSort) {
-			if (searchSort === 'A-Z') {
+			if (searchSort === 'A - Z') {
 				// https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
 				items.sort(function(a, b){
 					var nameA=a.cdc_short_title.toLowerCase(), nameB=b.cdc_short_title.toLowerCase();
@@ -26,7 +26,7 @@ export class FilterPipe implements PipeTransform {
 					return 0;
 				});
 			}
-			if (searchSort === 'Z-A') {
+			if (searchSort === 'Z - A') {
 				items.sort(function(a, b){
 					var nameA=a.cdc_short_title.toLowerCase(), nameB=b.cdc_short_title.toLowerCase();
 					if (nameA > nameB) return -1;
@@ -34,7 +34,7 @@ export class FilterPipe implements PipeTransform {
 					return 0;
 				});
 			}
-			if (searchSort === 'Newest-Oldest' || searchSort === '0') {
+			if (searchSort === 'Newest - Oldest' || searchSort === '0') {
 				items.sort(function(a, b){
 					var nameA=a.cdc_event_start_date, nameB=b.cdc_event_start_date;
 					if (nameA > nameB) return -1;
@@ -42,7 +42,7 @@ export class FilterPipe implements PipeTransform {
 					return 0;
 				});
 			}
-			if (searchSort === 'Oldest-Newest') {
+			if (searchSort === 'Oldest - Newest') {
 				items.sort(function(a, b){
 					var nameA=a.cdc_event_start_date, nameB=b.cdc_event_start_date;
 					if (nameA < nameB) return -1;
