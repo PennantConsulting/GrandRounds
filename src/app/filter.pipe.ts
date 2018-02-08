@@ -17,7 +17,8 @@ export class FilterPipe implements PipeTransform {
 		searchSort || '0';
 
 		if (searchSort) {
-			if (searchSort === 'A - Z') {
+			console.log(searchSort);
+			if (searchSort === 'A – Z') {
 				// https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
 				items.sort(function(a, b){
 					var nameA=a.cdc_short_title.toLowerCase(), nameB=b.cdc_short_title.toLowerCase();
@@ -26,7 +27,7 @@ export class FilterPipe implements PipeTransform {
 					return 0;
 				});
 			}
-			if (searchSort === 'Z - A') {
+			if (searchSort === 'Z – A') {
 				items.sort(function(a, b){
 					var nameA=a.cdc_short_title.toLowerCase(), nameB=b.cdc_short_title.toLowerCase();
 					if (nameA > nameB) return -1;
@@ -34,16 +35,22 @@ export class FilterPipe implements PipeTransform {
 					return 0;
 				});
 			}
-			if (searchSort === 'Newest - Oldest' || searchSort === '0') {
+			if (searchSort === 'Newest – Oldest' || searchSort === '0') {
 				items.sort(function(a, b){
+					a.cdc_event_start_date = new Date(a.cdc_event_start_date).getTime();
+					b.cdc_event_start_date = new Date(b.cdc_event_start_date).getTime();
+
 					var nameA=a.cdc_event_start_date, nameB=b.cdc_event_start_date;
 					if (nameA > nameB) return -1;
 					if (nameA < nameB) return 1;
 					return 0;
 				});
 			}
-			if (searchSort === 'Oldest - Newest') {
+			if (searchSort === 'Oldest – Newest') {
 				items.sort(function(a, b){
+					a.cdc_event_start_date = new Date(a.cdc_event_start_date).getTime();
+					b.cdc_event_start_date = new Date(b.cdc_event_start_date).getTime();
+
 					var nameA=a.cdc_event_start_date, nameB=b.cdc_event_start_date;
 					if (nameA < nameB) return -1;
 					if (nameA > nameB) return 1;
@@ -58,11 +65,15 @@ export class FilterPipe implements PipeTransform {
 			}
 
 			if (searchCat) {
+				var tmp = [];
+
 				for (var i = 0; i < item.cdc_session_browsing_categories.length; i++) { 
-					if (item.cdc_session_browsing_categories[i] !== searchCat) {
-						return false;
+					if (item.cdc_session_browsing_categories[i] === searchCat) {
+						tmp.push(item);
 					}
 				}
+
+				return tmp.length;
 			}
 
 			return item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase());
