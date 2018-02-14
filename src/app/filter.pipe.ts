@@ -17,7 +17,6 @@ export class FilterPipe implements PipeTransform {
 		searchSort || '0';
 
 		if (searchSort) {
-			console.log(searchSort);
 			if (searchSort === 'A – Z') {
 				// https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
 				items.sort(function(a, b){

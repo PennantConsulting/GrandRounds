@@ -29,6 +29,18 @@ export class AppComponent {
       this.items = items.items;
       this.filterMeta = items.filters;
       this.sortItems = items.sort;
+
+      // default sort order
+      this.searchSort = 'Newest – Oldest';
+      //this.searchYear = 'All';
+
+      // For direct linking to a category
+      var url_string = window.location.href,
+          url = new URL(url_string),
+          c = url.searchParams.get("category");
+      // if category url param is set, update model
+      if (c) {this.searchCat = c;}
+
     });
   }
 
