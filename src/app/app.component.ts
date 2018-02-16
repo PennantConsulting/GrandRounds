@@ -10,14 +10,14 @@ export class AppComponent {
   items:Item[];
   filterMeta;
   sortItems;
-  ImgHost:string;
+  hideSpinner;
+  itemResults;
   searchText:string;
   searchYear:string;
   searchCat:string;
   searchSort:string;
 
   constructor(private dataService:MediadataService) {
-    this.ImgHost='//www.cdc.gov';
     this.searchText = '';
     this.searchYear = '';
     this.searchCat = '';
@@ -25,6 +25,12 @@ export class AppComponent {
   }
   
   ngOnInit() {
+    this.hideSpinner = false;
+    this.itemResults = true;
+
+    // hide spinner
+    setTimeout(() =>{ this.hideSpinner = true; }, 4000)
+
     this.dataService.getPosts().subscribe((items) => {
       this.items = items.items;
       this.filterMeta = items.filters;
@@ -32,7 +38,6 @@ export class AppComponent {
 
       // default sort order
       this.searchSort = 'Newest – Oldest';
-      //this.searchYear = 'All';
 
       // For direct linking to a category
       var url_string = window.location.href,
@@ -40,6 +45,9 @@ export class AppComponent {
           c = url.searchParams.get("category");
       // if category url param is set, update model
       if (c) {this.searchCat = c;}
+
+      // remove spinner
+      document.getElementById('mediaSpinner').remove();
 
     });
   }

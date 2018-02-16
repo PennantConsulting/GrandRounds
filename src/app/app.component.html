@@ -55,10 +55,12 @@
   </form>
 </div>
 
-<div class="mediaResults">
+<div *ngIf="!(items | filter:searchText:searchYear:searchCat:searchSort)?.length">No Results, please adjust the filter options above</div>
 
-  <div class="span11 mediaModule" aria-atomic="true" 
+<div class="mediaResults row">
+  <div class="span12 mediaModule" aria-atomic="true" 
     *ngFor="let item of items | filter : searchText:searchYear:searchCat:searchSort; let i = index; let odd = odd">
+    
     <section class="module-typeA">
       <h3><a href="{{item.public_url}}">{{item.cdc_short_title}}</a></h3>
 
@@ -70,14 +72,15 @@
       </div>
 
       <div class="span4">
-        <figure class="pull-left">
-          <img class="stroke center" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
+        <figure>
+          <img class="stroke center mediaImg" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
         </figure>
       </div>
 
-      <div class="span6">
+      <div class="span7">
         <div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
       </div>
+      
 
       <p class="morelink">
         <a href="{{item.public_url}}" class="tp-link-policy">

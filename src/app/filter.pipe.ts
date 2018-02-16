@@ -74,9 +74,15 @@ export class FilterPipe implements PipeTransform {
 
 				return tmp.length;
 			}
+			
+			if ( 
+				item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase()) || 
+				item.cdc_internal_description.toLowerCase().includes(searchText.toLowerCase())
+			) { return true }
+			else {return false}
 
-			return item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase());
 		});
+		
    }
 
 }
