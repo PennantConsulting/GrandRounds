@@ -71,7 +71,13 @@
         </span>
       </div>
 
-      <div class="span4">
+      <figure class="pull-left">
+        <img class="stroke center mediaImg" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
+      </figure>
+      
+      <div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
+
+      <!-- <div class="span4">
         <figure>
           <img class="stroke center mediaImg" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
         </figure>
@@ -79,7 +85,7 @@
 
       <div class="span7">
         <div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
-      </div>
+      </div> -->
       
 
       <p class="morelink">

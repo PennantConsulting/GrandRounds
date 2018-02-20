@@ -47,6 +47,15 @@ export class AppComponent {
       if (c) {this.searchCat = c;}
 
       // remove spinner
+      // Create Element.remove() function if not exist
+      if (!('remove' in Element.prototype)) {
+        Element.prototype.remove = function() {
+            if (this.parentNode) {
+                this.parentNode.removeChild(this);
+            }
+        };
+      }
+
       document.getElementById('mediaSpinner').remove();
 
     });
