@@ -43,7 +43,7 @@
   </form>
 </div>
 
-<div *ngIf="!(items | filter:searchText:searchYear:searchCat:searchSort)?.length">No Results, please adjust the filter options above</div>
+<div *ngIf="!(items | filter:searchText:searchYear:searchCat:searchSort)?.length" class="noResults"><a href="#" id="media_0">No Results, please adjust the filter options above</a></div>
 
 <div class="mediaResults row">
   <div class="span12 mediaModule" aria-atomic="true" 
