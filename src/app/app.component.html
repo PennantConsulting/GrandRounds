@@ -23,28 +23,28 @@
     <div class="row">
       <div class="span7" style="margin-right:15px;">
           <label for="inputSearch">Search</label>
-          <input type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info" />
+          <input type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info" (change)="focusFirstItem()" />
       </div>
 
       <div class="span4">
-        <label for="searchCat">Filter by</label>
-        <select [(ngModel)]="searchCat" name="searchCat" id="searchCat" aria-controls="category-info">
-          <option [selected]="searchCat === ''" value="" selected>Category (all)</option>
+        <label for="searchCat">Filter by <span class="tp-sr-only">category</span></label>
+        <select [(ngModel)]="searchCat" name="searchCat" id="searchCat" aria-controls="category-info" (change)="focusFirstItem()">
+          <option [selected]="searchCat === ''" value="" selected>Select Category</option>
           <option *ngFor="let category of filterMeta?.cdc_session_browsing_categories" [ngValue]="category">{{category}}</option>
         </select>
       </div>
       
       <div class="span4">
-        <label>Filter by</label>
-        <select [(ngModel)]="searchYear" name="searchYear" aria-controls="lifespan-info">
-          <option [selected]="searchYear === ''" value="" selected>Lifespan (all)</option>
+        <label for="searchYear">Filter by <span class="tp-sr-only">lifespan</span></label>
+        <select [(ngModel)]="searchYear" name="searchYear" aria-controls="lifespan-info" id="searchYear" (change)="focusFirstItem()">
+          <option [selected]="searchYear === ''" value="" selected>Select Lifespan</option>
           <option *ngFor="let year of filterMeta?.cdc_session_browsing_lifespan" [ngValue]="year">{{year}}</option>
         </select>
       </div>
 
       <div class="span4 pull-right">
-        <label>Sort by</label>
-        <select [(ngModel)]="searchSort" name="searchSort" (change)="onProfileChange()" aria-controls="sort-info">
+        <label for="searchSort">Sort by <span class="tp-sr-only">category</span></label>
+        <select [(ngModel)]="searchSort" name="searchSort" id="searchSort" (change)="focusFirstItem()" aria-controls="sort-info">
           <option [ngValue]="sortItems?.cdc_short_title.asc">{{sortItems?.cdc_short_title.asc}}</option>
           <option [ngValue]="sortItems?.cdc_short_title.desc">{{sortItems?.cdc_short_title.desc}}</option>
           <option [ngValue]="sortItems?.cdc_event_start_date.asc">{{sortItems?.cdc_event_start_date.asc}}</option>
@@ -62,7 +62,7 @@
     *ngFor="let item of items | filter : searchText:searchYear:searchCat:searchSort; let i = index; let odd = odd">
     
     <section class="module-typeA">
-      <h3><a href="{{item.public_url}}">{{item.cdc_short_title}}</a></h3>
+      <h3><a href="{{item.public_url}}" id="media_{{i}}">{{item.cdc_short_title}}</a></h3>
 
       <div class="mediaDate gray4-color">
         {{item.cdc_event_start_date | date: 'MMMM y'}}<span *ngIf="item.cdc_session_browsing_categories.length">, </span>

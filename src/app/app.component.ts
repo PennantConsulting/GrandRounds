@@ -47,24 +47,18 @@ export class AppComponent {
       if (c) {this.searchCat = c;}
 
       // remove spinner
-      // Create Element.remove() function if not exist
-      if (!('remove' in Element.prototype)) {
-        Element.prototype.remove = function() {
-            if (this.parentNode) {
-                this.parentNode.removeChild(this);
-            }
-        };
-      }
-
       document.getElementById('mediaSpinner').remove();
 
     });
   }
 
-  onProfileChange() {
-    if(this.searchSort === '') {
-      this.searchSort = '0';
-    }
+  focusFirstItem() {
+    setTimeout(function(){ 
+      var firstItem = document.getElementById("media_0");
+      if(firstItem !== null) {
+        firstItem.focus();
+      }
+    }, 1000);
   }
 
 }
