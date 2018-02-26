@@ -16,6 +16,7 @@ export class AppComponent {
   searchYear:string;
   searchCat:string;
   searchSort:string;
+  timeout;
 
   constructor(private dataService:MediadataService) {
     this.searchText = '';
@@ -27,6 +28,7 @@ export class AppComponent {
   ngOnInit() {
     this.hideSpinner = false;
     this.itemResults = true;
+    this.timeout = null;
 
     // hide spinner
     setTimeout(() =>{ this.hideSpinner = true; }, 4000)
@@ -53,12 +55,14 @@ export class AppComponent {
   }
 
   focusFirstItem() {
-    setTimeout(function(){ 
+    clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(function(){ 
       var firstItem = document.getElementById("media_0");
       if(firstItem !== null) {
         firstItem.focus();
       }
-    }, 1000);
+    }, 2000);
   }
 
 }

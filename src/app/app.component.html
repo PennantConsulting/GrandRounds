@@ -5,25 +5,13 @@
   This filtering area contains options for sorting data dynamically for easy discovery.
   Filtering options include dropdowns to filter by text search, category, lifespan and various sorting.
 </div>
-<div class="tp-sr-only" role="region" id="searchtext-info" aria-live="assertive">
-    The sorting filter has been updated. Searching for text: {{searchText}}
-  </div>
-<div class="tp-sr-only" role="region" id="category-info" aria-live="assertive">
-  The category filter has been updated to {{searchCat}}
-</div>
-<div class="tp-sr-only" role="region" id="lifespan-info" aria-live="assertive">
-  The lifespan filter has been updated to {{searchYear}}
-</div>
-<div class="tp-sr-only" role="region" id="sort-info" aria-live="assertive">
-  The sorting filter has been updated to {{searchSort}}
-</div>
 
 <div class="well" id="mediaFilter" aria-describedby="filter-description">
   <form class="form-inline" name="filterForm">
     <div class="row">
       <div class="span7" style="margin-right:15px;">
           <label for="inputSearch">Search</label>
-          <input type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info" (change)="focusFirstItem()" />
+          <input type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info" (input)="focusFirstItem()" />
       </div>
 
       <div class="span4">
