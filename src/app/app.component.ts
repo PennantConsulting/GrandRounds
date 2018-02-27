@@ -62,7 +62,7 @@ export class AppComponent {
       if(firstItem !== null) {
         firstItem.focus();
       }
-    }, 2000);
+    }, 5000);
   }
 
 }
