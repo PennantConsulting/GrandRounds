@@ -17,6 +17,7 @@ export class AppComponent {
   searchCat:string;
   searchSort:string;
   timeout;
+  getParameterByName;
 
   constructor(private dataService:MediadataService) {
     this.searchText = '';
@@ -41,10 +42,17 @@ export class AppComponent {
       // default sort order
       this.searchSort = 'Newest – Oldest';
 
-      // For direct linking to a category
-      var url_string = window.location.href,
-          url = new URL(url_string),
-          c = url.searchParams.get("category");
+      this.getParameterByName = function (name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      };
+
+      var c = this.getParameterByName('category');
       // if category url param is set, update model
       if (c) {this.searchCat = c;}
 
