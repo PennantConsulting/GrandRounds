@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FilterPipe implements PipeTransform {
   transform(items: any[], searchText: string, searchYear:string, searchCat:string, searchSort:string): any[] {
-		
+
 		// Defaults if none are filtered
 		if(!items) return [];
 		if(!searchText && !searchYear && !searchCat && !searchSort) return items;
@@ -67,22 +67,24 @@ export class FilterPipe implements PipeTransform {
 				var tmp = [];
 
 				for (var i = 0; i < item.cdc_session_browsing_categories.length; i++) { 
-					if (item.cdc_session_browsing_categories[i] === searchCat) {
+					if (item.cdc_session_browsing_categories[i] === searchCat && (item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase()) || 
+					item.cdc_internal_description.toLowerCase().includes(searchText.toLowerCase()))) {
 						tmp.push(item);
 					}
 				}
 
+
 				return tmp.length;
 			}
-			
-			if ( 
+
+			if (
 				item.cdc_short_title.toLowerCase().includes(searchText.toLowerCase()) || 
 				item.cdc_internal_description.toLowerCase().includes(searchText.toLowerCase())
 			) { return true }
 			else {return false}
 
 		});
-		
+
    }
 
 }
