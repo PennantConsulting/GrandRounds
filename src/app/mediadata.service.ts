@@ -10,7 +10,7 @@ export class MediadataService {
   }
 
   getPosts() {
-    var datapath = document.getElementsByTagName("app-root")[0].getAttribute("data-datasource"); 
+    var datapath = document.getElementsByTagName("grep-on-demand-root")[0].getAttribute("data-datasource");
 
     return this.http.get(datapath)
     .map(res => res.json());

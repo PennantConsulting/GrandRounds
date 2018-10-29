@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+#mediaFilter {
+	padding-top: 8px;
+	form {margin-bottom:0;}
+	input, select {width:100%;}
+	label {
+		font-size: 9pt;
+		color: #666;
+		margin-bottom: 0;
+	}
+}
+
+#body .noResults {
+	a {text-decoration: none; color:#333; cursor: default;}
+}
+
+.mediaResults {
+	margin-top:30px;
+
+	.mediaModule {
+		img.mediaImg {max-height:150px;}
+		h3 {
+			line-height: 18pt;
+			a {text-transform: capitalize !important;}
+		}
+		.mediaDesc {
+			line-height: 20px;
+		}
+
+		.mediaDate {
+			font-size:9pt;
+			margin:-5px 0 5px 0;
+		}
+
+		&:nth-child(odd) {clear:left;}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.mediaResults {
+		.mediaModule {
+			.mediaDesc {padding:0 15px;}
+			img.mediaImg {
+				width:100%;
+				height:auto;
+				max-height:inherit;
+			}
+		}
+	}
+
+	#wrapper .mediaModule [class*="module"]>figure.pull-left {width:50%;}
+}
+
+@media screen and (max-width: 469px) {
+	#wrapper .mediaModule [class*="module"]>figure.pull-left {width:100%;}
+}

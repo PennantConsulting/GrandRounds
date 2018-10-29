@@ -1,92 +1,97 @@
-<h2>Grand Rounds On Demand</h2>
-<p>Public Health Grand Rounds is a monthly webcast created to foster discussion on major public health issues. Each session focuses on key challenges related to a specific health topic, and explores cutting-edge scientific evidence and potential impact of different interventions. The Grand Rounds sessions also highlight how CDC and its partners are already addressing these challenges and discuss the recommendations for future research and practice.</p>
-
-<div class="tp-sr-only" id="filter-description">
-  This filtering area contains options for sorting data dynamically for easy discovery.
-  Filtering options include dropdowns to filter by text search, category, lifespan and various sorting.
+<div class="sr-only" id="filter-description">
+	This filtering area contains options for sorting data dynamically for easy discovery.
+	Filtering options include dropdowns to filter by text search, category, lifespan and various sorting.
 </div>
 
-<div class="well" id="mediaFilter" aria-describedby="filter-description">
-  <form class="form-inline" name="filterForm">
-    <div class="row">
-      <div class="span7" style="margin-right:15px;">
-          <label for="inputSearch">Search</label>
-          <input type="text" id="inputSearch" [(ngModel)]="searchText" name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info" (input)="focusFirstItem()" />
-      </div>
+<div class="card mb-3 bg-gray-l2" id="mediaFilter" aria-describedby="filter-description">
+	<div class="card-body">
+		<form class="" name="filterForm">
+			<div class="row">
+				<div class="col-md-4">
+					<label class="forms-label h5 open" for="inputSearch">Search</label>
+					<input class="form-control nobutton" type="text" id="inputSearch" [(ngModel)]="searchText"
+						   name="searchText" placeholder="Topic, Category, etc." aria-controls="searchtext-info"
+						   (input)="focusFirstItem()"/>
+				</div>
 
-      <div class="span4">
-        <label for="searchCat">Filter by <span class="tp-sr-only">category</span></label>
-        <select [(ngModel)]="searchCat" name="searchCat" id="searchCat" aria-controls="category-info" (change)="focusFirstItem()">
-          <option [selected]="searchCat === ''" value="" selected>Select Category</option>
-          <option *ngFor="let category of filterMeta?.cdc_session_browsing_categories" [ngValue]="category">{{category}}</option>
-        </select>
-      </div>
-      
-      <div class="span4">
-        <label for="searchYear">Filter by <span class="tp-sr-only">lifespan</span></label>
-        <select [(ngModel)]="searchYear" name="searchYear" aria-controls="lifespan-info" id="searchYear" (change)="focusFirstItem()">
-          <option [selected]="searchYear === ''" value="" selected>Select Lifespan</option>
-          <option *ngFor="let year of filterMeta?.cdc_session_browsing_lifespan" [ngValue]="year">{{year}}</option>
-        </select>
-      </div>
+				<div class="col-md-3">
+					<label class="forms-label h5 open" for="searchCat">Filter by <span
+							class="sr-only">category</span></label>
+					<select [(ngModel)]="searchCat" name="searchCat" id="searchCat" aria-controls="category-info"
+							(change)="focusFirstItem()" class="form-control">
+						<option [selected]="searchCat === ''" value="" selected>Select Category</option>
+						<option *ngFor="let category of filterMeta?.cdc_session_browsing_categories"
+								[ngValue]="category">{{category}}
+						</option>
+					</select>
+				</div>
 
-      <div class="span4 pull-right">
-        <label for="searchSort">Sort by <span class="tp-sr-only">category</span></label>
-        <select [(ngModel)]="searchSort" name="searchSort" id="searchSort" (change)="focusFirstItem()" aria-controls="sort-info">
-          <option [ngValue]="sortItems?.cdc_short_title.asc">{{sortItems?.cdc_short_title.asc}}</option>
-          <option [ngValue]="sortItems?.cdc_short_title.desc">{{sortItems?.cdc_short_title.desc}}</option>
-          <option [ngValue]="sortItems?.cdc_event_start_date.asc">{{sortItems?.cdc_event_start_date.asc}}</option>
-          <option [ngValue]="sortItems?.cdc_event_start_date.desc">{{sortItems?.cdc_event_start_date.desc}}</option>
-        </select>
-      </div>
-    </div>
-  </form>
+				<div class="col-md-3">
+					<label class="forms-label h5 open" for="searchYear">Filter by <span class="sr-only">lifespan</span></label>
+					<select [(ngModel)]="searchYear" name="searchYear" aria-controls="lifespan-info" id="searchYear"
+							(change)="focusFirstItem()" class="form-control">
+						<option [selected]="searchYear === ''" value="" selected>Select Lifespan</option>
+						<option *ngFor="let year of filterMeta?.cdc_session_browsing_lifespan" [ngValue]="year">
+							{{year}}
+						</option>
+					</select>
+				</div>
+
+				<!--<div class="col-md-2">
+				</div>-->
+
+				<div class="col-md-2">
+					<label class="forms-label h5 open" for="searchSort">Sort by <span
+							class="sr-only">category</span></label>
+					<select [(ngModel)]="searchSort" name="searchSort" id="searchSort" (change)="focusFirstItem()"
+							aria-controls="sort-info" class="form-control">
+						<option [ngValue]="sortItems?.cdc_short_title.asc">{{sortItems?.cdc_short_title.asc}}</option>
+						<option [ngValue]="sortItems?.cdc_short_title.desc">{{sortItems?.cdc_short_title.desc}}</option>
+						<option [ngValue]="sortItems?.cdc_event_start_date.asc">
+							{{sortItems?.cdc_event_start_date.asc}}
+						</option>
+						<option [ngValue]="sortItems?.cdc_event_start_date.desc">
+							{{sortItems?.cdc_event_start_date.desc}}
+						</option>
+					</select>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 
 <div *ngIf="!(items | filter:searchText:searchYear:searchCat:searchSort)?.length" class="noResults">
-  <a href="#" id="media_0">No Grand Rounds sessions meet the selected criteria. Please adjust the filter options above.</a>
+	<p>No Grand Rounds sessions meet the selected criteria. Please adjust the filter options above.</p>
 </div>
 
 <div class="mediaResults row">
-  <div class="span12 mediaModule" aria-atomic="true" 
-    *ngFor="let item of items | filter : searchText:searchYear:searchCat:searchSort; let i = index; let odd = odd">
-    
-    <section class="module-typeA">
-      <h3><a href="{{item.public_url}}" id="media_{{i}}">{{item.cdc_short_title}}</a></h3>
+	<div class="col-md-6 mediaModule" aria-atomic="true"
+		 *ngFor="let item of items | filter : searchText:searchYear:searchCat:searchSort; let i = index; let odd = odd">
 
-      <div class="mediaDate gray4-color">
-        {{item.cdc_event_start_date | date: 'MMMM y'}}<span *ngIf="item.cdc_session_browsing_categories.length">, </span>
-        <span *ngFor="let cats of item.cdc_session_browsing_categories | slice:0:3; let last = last">
-          {{cats}}<span *ngIf="!last">, </span>
-        </span>
-      </div>
+		<div class="card mb-3">
+			<div class="card-header h4 bg-primary"><a href="{{item.public_url}}" id="media_{{i}}">{{item.cdc_short_title}}</a>
+			</div>
+			<div class="card-body mb-0 pb-0">
+				<div class="mediaDate text-gray-d1 mb-2">
+					{{item.cdc_event_start_date | date: 'MMMM y'}}<span
+						*ngIf="item.cdc_session_browsing_categories.length">, </span>
+					<ng-container *ngFor="let cats of item.cdc_session_browsing_categories | slice:0:3; let last = last">{{cats}}<ng-container *ngIf="!last">, </ng-container>
+					</ng-container>
+				</div>
 
-      <figure class="pull-left">
-        <img class="stroke center mediaImg" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
-      </figure>
-      
-      <div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
 
-      <!-- <div class="span4">
-        <figure>
-          <img class="stroke center mediaImg" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image" style="display: block;">
-        </figure>
-      </div>
+				<div class="w-md-33 w-sm-100 float-left mb-3 mr-3">
+					<img class="card-img-top" alt="{{item.cdc_short_title}}" [src]="item.cdc_related_image">
+				</div>
 
-      <div class="span7">
-        <div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
-      </div> -->
-      
-
-      <p class="morelink">
-        <a href="{{item.public_url}}" class="tp-link-policy">
-          Watch Now<span class="print-only">({{item.public_url}})</span>
-        </a>
-        <span class="icon-angle-right">
-        </span><span class="icon-angle-right"></span>
-      </p>
-
-    </section>
-  </div>
+				<div [innerHTML]="item.cdc_internal_description" class="mediaDesc"></div>
+			</div>
+			<div class="card-footer bt-0 pt-0 bg-white text-right">
+				<a href="{{item.public_url}}">
+					Watch Now<span class="d-none d-print-inline">({{item.public_url}})</span>
+				</a>
+			</div>
+		</div>
+	</div>
 
 </div><!-- mediaResults -->

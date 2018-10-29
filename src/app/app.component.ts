@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MediadataService } from './mediadata.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'grep-on-demand-root',
   templateUrl: './app.component.html',
   styleUrls: ['../styles.css']
 })
